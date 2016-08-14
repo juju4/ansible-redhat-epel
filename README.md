@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/juju4/ansible-redhat-epel.svg?branch=master)](https://travis-ci.org/juju4/ansible-myrole)
-# ABC ansible role
+# RedHat EPEL ansible role
 
 A simple ansible role to setup Redhat EPEL
 http://fedoraproject.org/wiki/EPEL
