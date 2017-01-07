@@ -23,6 +23,10 @@ provisioner:
 platforms:
   - name: centos-7
   - name: centos-6
+## Ansible 2.2+/cryptography: https://github.com/ansible/ansible/issues/276
+    provisioner:
+## Desired version, only affects apt-get installs
+      ansible_version: 2.1.2.0
 
 suites:
   - name: default
