@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/juju4/ansible-redhat-epel.svg?branch=master)](https://travis-ci.org/juju4/ansible-myrole)
+[![Build Status - Master](https://travis-ci.org/juju4/ansible-redhat-epel.svg?branch=master)](https://travis-ci.org/juju4/ansible-redhat-epel)
+[![Build Status - Devel](https://travis-ci.org/juju4/ansible-redhat-epel.svg?branch=devel)](https://travis-ci.org/juju4/ansible-redhat-epel/branches)
 # RedHat EPEL ansible role
 
 A simple ansible role to setup Redhat EPEL
@@ -10,6 +11,7 @@ http://fedoraproject.org/wiki/EPEL
 It was tested on the following versions:
  * 1.9
  * 2.0
+ * 2.2
 
 ### Operating systems
 
@@ -23,7 +25,7 @@ For example
 ```
 - host: all
   roles:
-    - redhat-epel
+    - juju4.redhat-epel
 ```
 
 ## Variables
@@ -37,14 +39,14 @@ Default kitchen config (.kitchen.yml) is lxd-based, while (.kitchen.vagrant.yml)
 
 Once you ensured all necessary roles are present, You can test with:
 ```
-$ cd /path/to/roles/redhat-epel
+$ cd /path/to/roles/juju4.redhat-epel
 $ kitchen verify
 $ kitchen login
 $ KITCHEN_YAML=".kitchen.vagrant.yml" kitchen verify
 ```
 or
 ```
-$ cd /path/to/roles/redhat-epel/test/vagrant
+$ cd /path/to/roles/juju4.redhat-epel/test/vagrant
 $ vagrant up
 $ vagrant ssh
 ```
