@@ -19,10 +19,11 @@ env:
     version: 14.04
     init: /sbin/init
     run_opts: ""
-  - distribution: ubuntu
-    version: 12.04
-    init: /sbin/init
-    run_opts: ""
+## 201709: ansible : Depends: python-cryptography but it is not installable
+#  - distribution: ubuntu
+#    version: 12.04
+#    init: /sbin/init
+#    run_opts: ""
   - distribution: alpine
     version: 3.4
     init: /sbin/init
