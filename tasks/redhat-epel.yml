@@ -21,7 +21,6 @@
   register: rpmepel
   changed_when: false
   ignore_errors: true
-  warn: no
 
 - name: RedHat6 | Install Fedora epel
   yum:
