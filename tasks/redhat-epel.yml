@@ -25,6 +25,8 @@
 ## FIXME! ansible not detecting package already installed if http
 - name: check if epel installed
   command: rpm -q epel-release
+  args:
+    warn: False
   register: rpmepel
   changed_when: false
   ignore_errors: true
