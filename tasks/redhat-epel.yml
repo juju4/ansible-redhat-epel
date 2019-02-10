@@ -21,7 +21,7 @@
   rpm_key:
     key: "/var/tmp/{{ epel_rpm_key | basename }}"
     state: present
-  when: epel_rpm_key
+  when: epel_rpm_key != ''
 
 ## FIXME! ansible not detecting package already installed if http
 - name: check if epel installed
