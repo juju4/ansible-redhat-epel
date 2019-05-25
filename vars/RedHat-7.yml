@@ -1,4 +1,4 @@
 ---
 
-epel_rpm_key: 'https://getfedora.org/static/352C64E5.txt'
-epel_rpm_key_hash: 22f25ad95d5e8d371760815485dba696ea3002fc2c7f812f2c75276853387107
+epel_rpm_key: 'https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7'
+epel_rpm_key_hash: 028b9accc59bab1d21f2f3f544df5469910581e728a64fd8c411a725a82300c2
