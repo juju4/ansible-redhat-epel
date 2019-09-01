@@ -24,6 +24,7 @@
   when: epel_rpm_key != ''
   register: pkg_result
   until: pkg_result is success
+  become: yes
 
 ## FIXME! ansible not detecting package already installed if http
 - name: check if epel installed
@@ -41,6 +42,7 @@
   when: ansible_distribution_major_version == "6" and rpmepel.rc != 0
   register: pkg_result
   until: pkg_result is success
+  become: yes
 - name: RedHat7 | Install Fedora epel
   yum:
     name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -48,3 +50,4 @@
   when: ansible_distribution_major_version == "7" and rpmepel.rc != 0
   register: pkg_result
   until: pkg_result is success
+  become: yes
