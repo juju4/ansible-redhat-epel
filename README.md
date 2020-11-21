@@ -1,5 +1,5 @@
-[![Build Status - Master](https://travis-ci.org/juju4/ansible-redhat-epel.svg?branch=master)](https://travis-ci.org/juju4/ansible-redhat-epel)
-[![Build Status - Devel](https://travis-ci.org/juju4/ansible-redhat-epel.svg?branch=devel)](https://travis-ci.org/juju4/ansible-redhat-epel/branches)
+[![Build Status - Master](https://travis-ci.com/juju4/ansible-redhat-epel.svg?branch=master)](https://travis-ci.com/juju4/ansible-redhat-epel)
+[![Build Status - Devel](https://travis-ci.com/juju4/ansible-redhat-epel.svg?branch=devel)](https://travis-ci.com/juju4/ansible-redhat-epel/branches)
 # RedHat EPEL ansible role
 
 A simple ansible role to setup Redhat EPEL
