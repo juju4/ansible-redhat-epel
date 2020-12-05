@@ -17,11 +17,11 @@
     validate_certs: no
   when: not epelkey.stat.exists and epel_rpm_key
 - name: Installing epel rpm key
-#  rpm_key: key={{ epel_rpm_key }}
+  # rpm_key: key={{ epel_rpm_key }}
   rpm_key:
     key: "/var/tmp/{{ epel_rpm_key | basename }}"
     state: present
-  when: epel_rpm_key != ''
+  when: epel_rpm_key|string
   register: pkg_result
   until: pkg_result is success
   become: yes
