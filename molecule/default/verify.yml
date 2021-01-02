@@ -1,0 +1,12 @@
+---
+
+- name: Verify
+  hosts: epel
+  tasks:
+  - name: Validate epel package is present
+    command: rpm -qi epel-release
+    changed_when: false
+    register: rpm
+  - name: Validate rpm
+    assert:
+      that: rpm.rc == 0
