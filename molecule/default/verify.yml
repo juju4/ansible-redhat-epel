@@ -4,7 +4,7 @@
   hosts: epel
   tasks:
   - name: Validate epel package is present
-    command: rpm -qi epel-release
+    command: rpm -qi epel-release  # noqa 303
     changed_when: false
     register: rpm
   - name: Validate rpm
