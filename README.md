@@ -1,6 +1,3 @@
-[![Build Status - Master](https://travis-ci.com/juju4/ansible-redhat-epel.svg?branch=master)](https://travis-ci.com/juju4/ansible-redhat-epel)
-[![Build Status - Devel](https://travis-ci.com/juju4/ansible-redhat-epel.svg?branch=devel)](https://travis-ci.com/juju4/ansible-redhat-epel/branches)
-
 [![Actions Status - Master](https://github.com/juju4/ansible-redhat-epel/workflows/AnsibleCI/badge.svg)](https://github.com/juju4/ansible-redhat-epel/actions?query=branch%3Amaster)
 [![Actions Status - Devel](https://github.com/juju4/ansible-redhat-epel/workflows/AnsibleCI/badge.svg?branch=devel)](https://github.com/juju4/ansible-redhat-epel/actions?query=branch%3Adevel)
 
