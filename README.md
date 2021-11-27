@@ -4,7 +4,8 @@
 # RedHat EPEL ansible role
 
 A simple ansible role to setup Redhat EPEL
-http://fedoraproject.org/wiki/EPEL
+* http://fedoraproject.org/wiki/EPEL
+* https://docs.fedoraproject.org/en-US/epel/
 
 ## Requirements & Dependencies
 
@@ -16,7 +17,7 @@ It was tested on the following versions:
 
 ### Operating systems
 
-Tested with Centos 6 and 7
+Tested with Centos 7 and 8
 
 ## Example Playbook
 
@@ -54,6 +55,7 @@ $ vagrant ssh
 
 ## Troubleshooting & Known issues
 
+* While EPEL for RedHat/Centos 6 is still included, it is EOL and it is strongly recommended to upgrade to recent release.
 
 ## License
 
