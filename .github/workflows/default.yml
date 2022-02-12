@@ -22,7 +22,7 @@ jobs:
           - 'rockylinux:8'
           - 'centos:7'
     env:
-      ANSIBLE_CALLBACK_WHITELIST: profile_tasks
+      ANSIBLE_CALLBACKS_ENABLED: profile_tasks
       MOLECULE_NO_LOG: "false"
 
     steps:
