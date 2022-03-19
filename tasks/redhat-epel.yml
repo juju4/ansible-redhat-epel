@@ -5,11 +5,11 @@
 ## meantime: use hash + no cert validation
 
 - name: check if epel key already retrieved
-  stat:
+  ansible.builtin.stat:
     path: "/var/tmp/{{ epel_rpm_key | basename }}"
   register: epelkey
 - name: Download epel rpm key
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ epel_rpm_key }}"
     dest: "/var/tmp/{{ epel_rpm_key | basename }}"
     mode: '0600'
@@ -18,7 +18,7 @@
   when: not epelkey.stat.exists and epel_rpm_key
 - name: Installing epel rpm key
   # rpm_key: key={{ epel_rpm_key }}
-  rpm_key:
+  ansible.builtin.rpm_key:
     key: "/var/tmp/{{ epel_rpm_key | basename }}"
     state: present
   when: epel_rpm_key|string
@@ -28,7 +28,7 @@
 
 ## FIXME! ansible not detecting package already installed if http
 - name: check if epel installed
-  command: rpm -q epel-release
+  ansible.builtin.command: rpm -q epel-release
   args:
     warn: False
   register: rpmepel
@@ -36,7 +36,7 @@
   ignore_errors: true
 
 - name: RedHat | Install Fedora epel
-  package:
+  ansible.builtin.package:
     name: "{{ redhat_epel_rpm }}"
     state: present
   when: rpmepel.rc != 0

@@ -4,9 +4,9 @@
   hosts: epel
   tasks:
   - name: Validate epel package is present
-    command: rpm -qi epel-release  # noqa 303
+    ansible.builtin.command: rpm -qi epel-release  # noqa 303
     changed_when: false
     register: rpm
   - name: Validate rpm
-    assert:
+    ansible.builtin.assert:
       that: rpm.rc == 0
