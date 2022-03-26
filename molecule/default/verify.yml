@@ -6,7 +6,9 @@
   - name: Validate epel package is present
     ansible.builtin.command: rpm -qi epel-release  # noqa 303
     changed_when: false
+    failed_when: false
     register: rpm
   - name: Validate rpm
     ansible.builtin.assert:
       that: rpm.rc == 0
+    when: ansible_os_family == "RedHat"
