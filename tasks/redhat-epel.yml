@@ -34,7 +34,7 @@
   ansible.builtin.package:
     name: "{{ redhat_epel_rpm }}"
     state: present
-  when: not ansible_facts.packages['epel-release']|string
+  when: "'epel-release' not in ansible_facts.packages"
   register: pkg_result
   until: pkg_result is success
   become: yes
