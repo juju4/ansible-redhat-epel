@@ -4,7 +4,7 @@
 ## Failed to validate the SSL certificate for getfedora.org:443. https://github.com/ansible/ansible/issues/12161
 ## meantime: use hash + no cert validation
 
-- name: check if epel key already retrieved
+- name: Check if epel key already retrieved
   ansible.builtin.stat:
     path: "/var/tmp/{{ epel_rpm_key | basename }}"
   register: epelkey
