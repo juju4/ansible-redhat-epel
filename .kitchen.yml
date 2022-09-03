@@ -20,6 +20,7 @@ provisioner:
   ansible_connection: ssh
 
 platforms:
+  - name: centos-8
   - name: centos-7
   - name: centos-6
     ## Ansible 2.2+/cryptography: https://github.com/ansible/ansible/issues/276
