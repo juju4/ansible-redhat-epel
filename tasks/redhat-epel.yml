@@ -49,20 +49,12 @@
   when:
     - ansible_distribution_major_version | int >= 9
 
-- name: RockyLinux9 | Enable CRB repo
+- name: RedHat9 | Enable CRB repo
   community.general.ini_file:
-    path: /etc/yum.repos.d/rocky.repo
+    path: "/etc/yum.repos.d/{{ ansible_distribution | lower }}.repo"
     section: crb
     option: enabled
     value: '1'
     mode: '0644'
   when:
-    - ansible_distribution == "Rocky"
-    - ansible_distribution_major_version | int == 9
-
-- name: RedHat9 | Enable CRB repo
-  ansible.builtin.command: dnf config-manager --enable crb  # noqa no-changed-when
-  become: yes
-  when:
-    - ansible_os_family == "RedHat" and ansible_distribution != 'Rocky'
     - ansible_distribution_major_version | int == 9
