@@ -20,6 +20,8 @@
     mode: '0600'
     checksum: "sha256:{{ epel_rpm_key_hash }}"
     validate_certs: no
+  register: dl_result
+  until: dl_result is success
   when: not epelkey.stat.exists and epel_rpm_key
 - name: Installing epel rpm key
   # rpm_key: key={{ epel_rpm_key }}
