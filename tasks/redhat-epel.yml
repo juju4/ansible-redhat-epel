@@ -56,7 +56,7 @@
   when:
     - ansible_distribution_major_version | int >= 9
 
-- name: RedHat9 | Enable CRB repo
+- name: RedHat9+ | Enable CRB repo
   community.general.ini_file:
     path: "/etc/yum.repos.d/{{ ansible_distribution | lower }}.repo"
     section: crb
@@ -64,4 +64,4 @@
     value: '1'
     mode: '0644'
   when:
-    - ansible_distribution_major_version | int == 9
+    - ansible_distribution_major_version | int >= 9
