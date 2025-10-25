@@ -8,6 +8,8 @@
   ansible.builtin.package:
     name: "{{ redhat_epel_pkgs | default([]) }}"
     state: present
+  register: pkg_result
+  until: pkg_result is success
 
 - name: Check if epel key already retrieved
   ansible.builtin.stat:
