@@ -32,7 +32,8 @@
   ansible.builtin.rpm_key:
     key: "/var/tmp/{{ epel_rpm_key | basename }}"
     state: present
-  when: epel_rpm_key | string
+  when:
+    - epel_rpm_key | length > 0
   register: pkg_result
   until: pkg_result is success
   become: yes
