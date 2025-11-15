@@ -24,7 +24,9 @@
     validate_certs: no
   register: dl_result
   until: dl_result is success
-  when: not epelkey.stat.exists and epel_rpm_key
+  when:
+    - not epelkey.stat.exists
+    - epel_rpm_key | length > 0
 - name: Installing epel rpm key
   # rpm_key: key={{ epel_rpm_key }}
   ansible.builtin.rpm_key:
