@@ -61,12 +61,26 @@
   when:
     - ansible_facts['distribution_major_version'] | int >= 9
 
-- name: RedHat9+ | Enable CRB repo
-  community.general.ini_file:
-    path: "{{ redhatepel_crb_file }}"
-    section: crb
-    option: enabled
-    value: '1'
-    mode: '0644'
+- name: CRB
   when:
     - ansible_facts['distribution_major_version'] | int >= 9
+  block:
+    - name: RedHat9+ | Enable CRB repo
+      community.general.ini_file:
+        path: "{{ redhatepel_crb_file }}"
+        section: crb
+        option: enabled
+        value: '1'
+        mode: '0644'
+  rescue:
+    - name: RedHat9+ | Check repo dir
+      ansible.builtin.command:
+        cmd: ls /etc/yum.repos.d
+      changed_when: false
+    - name: RedHat9+ | Check repolist
+      ansible.builtin.command:
+        cmd: dnf repolist --all
+      changed_when: false
+    - name: RedHat9+ | Enable CRB repo - cli
+      ansible.builtin.command:
+        cmd: dnf config-manager --set-enabled crb
