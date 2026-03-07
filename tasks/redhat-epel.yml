@@ -63,20 +63,7 @@
 
 - name: CRB
   when:
-    - ansible_facts['distribution_major_version'] | int >= 9 or ansible_facts['distribution'] != "AlmaLinux"
-  block:
-    - name: RedHat9+ | Enable CRB repo
-      community.general.ini_file:
-        path: "{{ redhatepel_crb_file }}"
-        section: crb
-        option: enabled
-        value: '1'
-        mode: '0644'
-
-- name: AlmaLinux 9 | CRB
-  when:
-    - ansible_facts['distribution_major_version'] | int == 9
-    - ansible_facts['distribution'] == "AlmaLinux"
+    - ansible_facts['distribution_major_version'] | int >= 9
   block:
     - name: RedHat9+ | Check repo dir
       ansible.builtin.command:
@@ -86,6 +73,10 @@
       ansible.builtin.command:
         cmd: dnf repolist --all
       changed_when: false
-    - name: RedHat9+ | Enable CRB repo - cli
-      ansible.builtin.command:  # noqa no-changed-when
-        cmd: dnf config-manager --set-enabled crb
+    - name: RedHat9+ | Enable CRB repo
+      community.general.ini_file:
+        path: "{{ redhatepel_crb_file }}"
+        section: crb
+        option: enabled
+        value: '1'
+        mode: '0644'

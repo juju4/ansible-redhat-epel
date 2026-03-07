@@ -3,6 +3,11 @@
 - name: Include version-specific variables for RedHat
   ansible.builtin.include_vars: "RedHat-{{ ansible_facts['distribution_major_version'] }}.yml"
   when: ansible_facts['os_family'] == "RedHat"
+- name: Include AlmaLinux-9 specific variables
+  ansible.builtin.include_vars: "AlmaLinux-9.yml"
+  when:
+    - ansible_facts['distribution'] == 'AlmaLinux'
+    - ansible_facts['distribution_major_version'] | int == 9
 
 - name: Import redhat-epel
   ansible.builtin.import_tasks: redhat-epel.yml
