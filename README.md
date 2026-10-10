@@ -1,7 +1,7 @@
-[![Actions Status - Master](https://github.com/juju4/ansible-redhat-epel/workflows/AnsibleCI/badge.svg)](https://github.com/juju4/ansible-redhat-epel/actions?query=branch%3Amaster)
-[![Actions Status - Devel](https://github.com/juju4/ansible-redhat-epel/workflows/AnsibleCI/badge.svg?branch=devel)](https://github.com/juju4/ansible-redhat-epel/actions?query=branch%3Adevel)
-
 # RedHat EPEL ansible role
+
+[![Actions Status - Main](https://github.com/juju4/ansible-redhat-epel/workflows/AnsibleCI/badge.svg)](https://github.com/juju4/ansible-redhat-epel/actions?query=branch%3Amain)
+[![Actions Status - Devel](https://github.com/juju4/ansible-redhat-epel/workflows/AnsibleCI/badge.svg?branch=devel)](https://github.com/juju4/ansible-redhat-epel/actions?query=branch%3Adevel)
 
 A simple ansible role to setup Redhat EPEL
 * http://fedoraproject.org/wiki/EPEL
